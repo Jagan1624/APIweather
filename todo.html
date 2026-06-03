@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>To-Do App | Jagan Portfolio</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <header>
+
+        <h1>To-Do Application</h1>
+
+        <nav aria-label="Main Navigation">
+
+            <ul>
+
+                <li><a href="index.html">Home</a></li>
+
+                <li><a href="about.html">About</a></li>
+
+                <li><a href="projects.html">Projects</a></li>
+
+                <li><a href="todo.html">To-Do App</a></li>
+
+                <li><a href="contact.html">Contact</a></li>
+
+            </ul>
+
+        </nav>
+
+    </header>
+
+    <main>
+
+        <section class="hero">
+
+            <h2>
+                JavaScript To-Do List
+            </h2>
+
+            <p>
+                CRUD operations with localStorage persistence.
+            </p>
+
+        </section>
+
+        <section class="todo-container">
+
+            <div class="todo-input-section">
+
+                <input
+                    type="text"
+                    id="todo-input"
+                    placeholder="Enter a task..."
+                >
+
+                <button id="add-btn">
+
+                    Add Task
+
+                </button>
+
+            </div>
+
+            <div class="filters">
+
+                <button
+                    class="filter-btn active"
+                    data-filter="all">
+
+                    All
+
+                </button>
+
+                <button
+                    class="filter-btn"
+                    data-filter="active">
+
+                    Active
+
+                </button>
+
+                <button
+                    class="filter-btn"
+                    data-filter="completed">
+
+                    Completed
+
+                </button>
+
+            </div>
+
+            <ul id="todo-list">
+
+            </ul>
+
+        </section>
+
+    </main>
+
+    <footer>
+
+        <p>
+            © 2026 Jagan Portfolio
+        </p>
+
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
