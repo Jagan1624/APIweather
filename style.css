@@ -38,6 +38,7 @@
 ========================= */
 
 * {
+
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -242,7 +243,8 @@ button {
    INPUT
 ========================= */
 
-input, textarea {
+input,
+textarea {
 
     padding: 12px;
 
@@ -287,9 +289,88 @@ input, textarea {
 
 /* ACTIONS */
 
-.complete-btn { background: var(--success); }
-.edit-btn { background: var(--warning); }
-.delete-btn { background: var(--danger); }
+.complete-btn {
+
+    background: var(--success);
+}
+
+.edit-btn {
+
+    background: var(--warning);
+}
+
+.delete-btn {
+
+    background: var(--danger);
+}
+
+/* =========================
+   WEATHER DASHBOARD
+========================= */
+
+.weather-section {
+
+    margin-top: 40px;
+}
+
+.weather-search {
+
+    display: flex;
+
+    gap: 12px;
+
+    margin-bottom: 20px;
+}
+
+.weather-search input {
+
+    flex: 1;
+}
+
+.weather-card {
+
+    background: var(--surface);
+
+    border: var(--border);
+
+    border-radius: var(--radius);
+
+    padding: 25px;
+
+    box-shadow: var(--shadow);
+}
+
+.weather-card h3 {
+
+    margin-bottom: 10px;
+
+    color: var(--secondary);
+}
+
+.weather-info {
+
+    display: grid;
+
+    gap: 14px;
+
+    margin-top: 20px;
+}
+
+.weather-item {
+
+    background: rgba(255,255,255,0.04);
+
+    padding: 14px;
+
+    border-radius: 10px;
+}
+
+.error {
+
+    color: #fca5a5;
+
+    font-weight: 600;
+}
 
 /* =========================
    FOOTER
@@ -320,5 +401,10 @@ footer {
     .hero {
 
         padding: 25px;
+    }
+
+    .weather-search {
+
+        flex-direction: column;
     }
 }

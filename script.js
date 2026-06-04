@@ -1,3 +1,7 @@
+/* =========================
+   TODO APP
+========================= */
+
 const todoInput =
     document.getElementById(
         "todo-input"
@@ -265,4 +269,163 @@ if (
     });
 
     renderTodos();
+}
+
+/* =========================
+   WEATHER DASHBOARD
+========================= */
+
+const cityInput =
+    document.getElementById(
+        "city-input"
+    );
+
+const searchBtn =
+    document.getElementById(
+        "search-btn"
+    );
+
+const weatherCard =
+    document.getElementById(
+        "weather-card"
+    );
+
+/*
+   Your OpenWeather API Key
+*/
+
+const API_KEY =
+    "646b6734830fdee665690623370d3fd6";
+
+async function fetchWeather(city) {
+
+    try {
+
+        weatherCard.innerHTML = `
+            <h3>Loading...</h3>
+        `;
+
+        const response =
+            await fetch(
+                `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=metric`
+            );
+
+        if (!response.ok) {
+
+            throw new Error(
+                "City not found"
+            );
+        }
+
+        const data =
+            await response.json();
+
+        renderWeather(data);
+
+    } catch (error) {
+
+        weatherCard.innerHTML = `
+            <p class="error">
+                ${error.message}
+            </p>
+        `;
+    }
+}
+
+function renderWeather(data) {
+
+    const {
+
+        name,
+
+        main,
+
+        weather,
+
+        wind,
+
+        sys
+    } = data;
+
+    weatherCard.innerHTML = `
+
+        <h3>
+            ${name},
+            ${sys.country}
+        </h3>
+
+        <p>
+            ${weather[0].main}
+        </p>
+
+        <div class="weather-info">
+
+            <div class="weather-item">
+
+                🌡 Temperature:
+                ${main.temp} °C
+
+            </div>
+
+            <div class="weather-item">
+
+                💧 Humidity:
+                ${main.humidity}%
+
+            </div>
+
+            <div class="weather-item">
+
+                🌬 Wind Speed:
+                ${wind.speed} m/s
+
+            </div>
+
+            <div class="weather-item">
+
+                🤒 Feels Like:
+                ${main.feels_like} °C
+
+            </div>
+
+        </div>
+    `;
+}
+
+if (
+    cityInput &&
+    searchBtn &&
+    weatherCard
+) {
+
+    searchBtn.addEventListener(
+        "click",
+        () => {
+
+            const city =
+                cityInput.value.trim();
+
+            if (city !== "") {
+
+                fetchWeather(city);
+            }
+        }
+    );
+
+    cityInput.addEventListener(
+        "keypress",
+        event => {
+
+            if (event.key === "Enter") {
+
+                const city =
+                    cityInput.value.trim();
+
+                if (city !== "") {
+
+                    fetchWeather(city);
+                }
+            }
+        }
+    );
 }

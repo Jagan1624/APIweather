@@ -9,7 +9,7 @@
         content="width=device-width, initial-scale=1.0">
 
     <title>
-        To-Do App
+        Weather Dashboard
     </title>
 
     <link rel="stylesheet"
@@ -52,61 +52,45 @@
         <section class="hero">
 
             <h2>
-                To-Do Application
+                Live Weather Dashboard
             </h2>
 
             <p>
-                Manage your tasks efficiently.
+                Search city weather in real-time.
             </p>
 
         </section>
 
-        <section class="todo-container">
+        <section class="weather-section">
 
-            <div class="todo-input-section">
+            <div class="weather-search">
 
                 <input
                     type="text"
-                    id="todo-input"
-                    placeholder="Enter task...">
+                    id="city-input"
+                    placeholder="Enter city name...">
 
-                <button id="add-btn">
+                <button id="search-btn">
 
-                    Add Task
-
-                </button>
-
-            </div>
-
-            <div class="filter-buttons">
-
-                <button
-                    class="filter-btn active"
-                    data-filter="all">
-
-                    All
-
-                </button>
-
-                <button
-                    class="filter-btn"
-                    data-filter="active">
-
-                    Active
-
-                </button>
-
-                <button
-                    class="filter-btn"
-                    data-filter="completed">
-
-                    Completed
+                    Search
 
                 </button>
 
             </div>
 
-            <ul id="todo-list"></ul>
+            <div
+                id="weather-card"
+                class="weather-card">
+
+                <h3>
+                    Weather Info
+                </h3>
+
+                <p>
+                    Search a city above.
+                </p>
+
+            </div>
 
         </section>
 
